@@ -26,6 +26,8 @@ def env_to_param(env_line: str) -> AwsParameter:
 
 def ensure_env_input(input_params: str):
     param_lines = input_params.split(sep="\n")
+    print("ensure_env_input")
+    print(param_lines)
     return [param_line.strip() for param_line in param_lines]
 
 
