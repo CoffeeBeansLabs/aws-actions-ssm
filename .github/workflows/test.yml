@@ -5,7 +5,8 @@ permissions:
 on:
   push:
     branches:
-      - feature/github_action
+      - dev
+      - main
 jobs:
   test:
     runs-on: ubuntu-latest
