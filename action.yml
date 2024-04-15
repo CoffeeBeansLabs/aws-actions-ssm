@@ -13,4 +13,3 @@ runs:
   env:
     INPUT_PARAMS: ${{ inputs.parameters }}
     INPUT_PARAMS_FILE_PATH: ${{ inputs.params-file }}
-    WORKSPACE_DIR: ${{ GITHUB_WORKSPACE }}
