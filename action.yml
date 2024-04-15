@@ -1,0 +1,16 @@
+name: 'AWS SSM'
+description: 'A Github action for parameter store update'
+inputs:
+  parameters:
+    description: 'Provide parameters as json or .env file format with each pair for one line.'
+    required: false
+  params-file:
+    description: 'Write params to a json file and provide the file path from github workspace root.'
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    INPUT_PARAMS: ${{ input.parameters }}
+    INPUT_PARAMS_FILE_PATH: ${{ input.params-file }}
+    WORKSPACE_DIR: ${{ GITHUB_WORKSPACE }}

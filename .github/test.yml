@@ -1,0 +1,27 @@
+name: test aws action for put parameter store
+permissions:
+  contents: write
+  actions: write
+on:
+  push:
+    branches:
+      - feature/github_action
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: test parameter store
+        uses: ./
+        with:
+          parameters: test=test
+
+      - name: test parameter store
+        uses: ./
+        with:
+          parameters: |
+            test=test
+            test1="test1"
+
