@@ -25,4 +25,5 @@ if __name__ == '__main__':
         with open(path, 'r') as f:
             params_from_file = parse_input_params(f.read())
     params = {**params_from_file, **params_inline}
-    run(params)
+    print(f"ENV_VAL: {os.getenv('ENV_VAL')}")
+    # run(params)
