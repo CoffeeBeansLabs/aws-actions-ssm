@@ -1,4 +1,4 @@
-name: 'coffeebeans/aws-ssm'
+name: coffeebeanslabs/aws-ssm
 description: 'A Github action for parameter store update'
 inputs:
   parameters:
