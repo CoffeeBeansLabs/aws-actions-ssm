@@ -6,7 +6,8 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY ./src/ /app
-WORKDIR /app
+WORKDIR /usr/src
 
-ENTRYPOINT ["python", "aws_ssm.py"]
+COPY ./src/ .
+
+ENTRYPOINT ["python", "/usr/src/aws_ssm.py"]
