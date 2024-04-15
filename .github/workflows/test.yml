@@ -13,15 +13,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: test parameter store
+      - name: test parameter store - input env
         uses: ./
         with:
           parameters: test=test
 
-      - name: test parameter store
+      - name: test parameter store - input multiline env
         uses: ./
         with:
           parameters: |
             test=test
             test1="test1"
+
+      - name: test parameter store - input variables
+        uses: ./
+        env:
+          ENV_VAL: ${{ github.workspace }}
+        with:
+          parameters: |
+            test=test
+            test1="test1"
+            env_val=${{ env.ENV_VAL }}
 

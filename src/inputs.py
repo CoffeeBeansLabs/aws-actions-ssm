@@ -26,8 +26,6 @@ def env_to_param(env_line: str) -> AwsParameter:
 
 def ensure_env_input(input_params: str):
     param_lines = input_params.strip().split(sep="\n")
-    print("param_lines")
-    print(param_lines)
     return [param_line.strip() for param_line in param_lines]
 
 
@@ -47,6 +45,4 @@ def parse_input_params(input_params: str):
         return {key: value_to_aws_parameter(key, value) for key, value in parsed_params_json.items()}
     parsed_params_env = ensure_env_input(input_params)
     parsed_aws_params_env = [env_to_param(env_param) for env_param in parsed_params_env]
-    print("parsed_aws_params_env")
-    print(parsed_aws_params_env)
     return {p.name: p for p in parsed_aws_params_env}

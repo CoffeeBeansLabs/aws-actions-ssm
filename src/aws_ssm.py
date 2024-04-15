@@ -6,9 +6,6 @@ from common.aws_clients import get_client
 
 
 def run(aws_parameters: dict[str, AwsParameter]):
-    print(aws_parameters)
-    for n, p in aws_parameters.items():
-        print(f"{n}: {p.value}")
     ssm_client = get_client(service_name='ssm',
                             region_name=os.getenv('AWS_REGION'),
                             aws_access_key=os.getenv('AWS_ACCESS_KEY'),
@@ -19,18 +16,10 @@ def run(aws_parameters: dict[str, AwsParameter]):
 
 
 if __name__ == '__main__':
-    print("test")
     input_params = os.getenv('INPUT_PARAMS')
-    print(f"input_params")
-    print(input_params)
     params_inline = parse_input_params(input_params) if input_params is not None else {}
-    print("params_inline")
-    print(params_inline)
     params_from_file = {}
     params_file_path = os.getenv('INPUT_PARAMS_FILE_PATH')
-    print(f"params_file_path: {params_file_path}")
-    print(params_file_path)
-    print(f"workspace: {os.getenv('GITHUB_WORKSPACE')}")
     if params_file_path is not None and params_file_path != "":
         path = pathlib.PurePath(os.getenv('GITHUB_WORKSPACE'), params_file_path)
         with open(path, 'r') as f:
