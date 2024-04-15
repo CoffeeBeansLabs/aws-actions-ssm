@@ -25,3 +25,4 @@ if __name__ == '__main__':
         with open(path, 'r') as f:
             params_from_file = parse_input_params(f.read())
     params = {**params_from_file, **params_inline}.items()
+    print(params)
