@@ -6,6 +6,9 @@ from common.aws_clients import get_client
 
 
 def run(aws_parameters: dict[str, AwsParameter]):
+    print(aws_parameters)
+    for n, p in aws_parameters.items():
+        print(f"{n}: {p.value}")
     ssm_client = get_client(service_name='ssm',
                             region_name=os.getenv('AWS_REGION'),
                             aws_access_key=os.getenv('AWS_ACCESS_KEY'),
