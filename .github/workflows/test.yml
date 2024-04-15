@@ -14,12 +14,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: test parameter store
-        uses: .
+        uses: ./
         with:
           parameters: test=test
 
       - name: test parameter store
-        uses: .
+        uses: ./
         with:
           parameters: |
             test=test
