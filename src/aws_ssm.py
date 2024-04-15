@@ -24,5 +24,5 @@ if __name__ == '__main__':
         path = pathlib.PurePath(os.getenv('GITHUB_WORKSPACE'), params_file_path)
         with open(path, 'r') as f:
             params_from_file = parse_input_params(f.read())
-    params = {**params_from_file, **params_inline}.items()
-    print(params)
+    params = {**params_from_file, **params_inline}
+    run(params)
