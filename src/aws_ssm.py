@@ -27,7 +27,7 @@ if __name__ == '__main__':
     print(f"params_file_path: {params_file_path}")
     print(params_file_path)
     print(f"workspace: {os.getenv('GITHUB_WORKSPACE')}")
-    if params_file_path is not None:
+    if params_file_path is not None and params_file_path != "":
         path = pathlib.PurePath(os.getenv('GITHUB_WORKSPACE'), params_file_path)
         with open(path, 'r') as f:
             params_from_file = parse_input_params(f.read())
