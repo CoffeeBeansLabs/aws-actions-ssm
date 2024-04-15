@@ -23,6 +23,8 @@ if __name__ == '__main__':
     input_params = os.getenv('INPUT_PARAMS')
     print(f"input_params: {input_params}")
     params_inline = parse_input_params(input_params) if input_params is not None else {}
+    print("params_inline")
+    print(params_inline)
     params_from_file = {}
     params_file_path = os.getenv('INPUT_PARAMS_FILE_PATH')
     print(f"params_file_path: {params_file_path}")
