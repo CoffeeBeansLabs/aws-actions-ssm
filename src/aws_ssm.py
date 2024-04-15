@@ -24,6 +24,7 @@ if __name__ == '__main__':
     params_inline = parse_input_params(input_params) if input_params is not None else {}
     params_from_file = {}
     params_file_path = os.getenv('INPUT_PARAMS_FILE_PATH')
+    print(f"params_file_path: {params_file_path}")
     print(params_file_path)
     if params_file_path is not None:
         path = pathlib.PurePath(os.getenv('WORKSPACE_DIR'), params_file_path)
