@@ -1,4 +1,4 @@
-name: coffeebeanslabs\aws-ssm
+name: 'An action to update Parameters into AWS Parameters Store through SSM by CoffeeBeansLabs'
 description: 'A Github action for parameter store update'
 inputs:
   parameters:
