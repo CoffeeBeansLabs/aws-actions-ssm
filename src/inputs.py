@@ -31,7 +31,7 @@ def ensure_env_input(input_params: str):
 
 def value_to_aws_parameter(param_name, param_value):
     parsed_value_json = ensure_json_input(param_value)
-    if parsed_value_json is None:
+    if parsed_value_json is None or isinstance(parsed_value_json, dict) is False:
         return AwsParameter(name=param_name, value=param_value)
     value = parsed_value_json.get('value') if parsed_value_json.get('value') is not None else None
     param_type = parsed_value_json.get('type') if parsed_value_json.get('type') is not None else 'String'
