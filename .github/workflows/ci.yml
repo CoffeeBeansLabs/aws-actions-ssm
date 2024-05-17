@@ -3,11 +3,17 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
 permissions:
   contents: read
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: test
-        run: echo "test"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: test-file
+        uses: ./
+        with:
+          params-file: ./test.json
